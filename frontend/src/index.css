@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+}
+
+.left h1 {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card.large {
+  min-height: 260px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+select option {
+  background: #1e293b;
+  color: #e5e7eb;
+  padding: 10px;
+}
+
+select:focus {
+  outline: none;
+  border-color: rgba(96, 165, 250, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.severity {
+  display: flex;
+  gap: 8px;
+}
+
+.severity button {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.primary {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.primary.small {
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flow-node {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.flow-node span {
+  font-weight: bold;
+  color: #60a5fa;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.msg.bot {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.empty {
+  color: #64748b;
+}
+
+/* --- Visual hierarchy upgrades --- */
+
+.card.highlight {
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: linear-gradient(180deg,
+      rgba(96, 165, 250, 0.08),
+      rgba(255, 255, 255, 0.03));
+}
+
+.card.subtle {
+  opacity: 0.9;
+}
+
+/* --- Chatbot --- */
+
+.chatbot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 6px;
+  margin-bottom: 12px;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.chat-msg.bot {
+  background: rgba(255, 255, 255, 0.08);
+  align-self: flex-start;
+}
+
+.chat-msg.user {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #020617;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+}
+
+.chat-input button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+}
+
+/* --- Flowchart polish --- */
+
+.flow-node {
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.flow-node:hover {
+  transform: translateX(6px);
+}
+
+/* --- Scrollbar (subtle) --- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.severity button.active {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  border: none;
+  color: #020617;
+  font-weight: 600;
+}
